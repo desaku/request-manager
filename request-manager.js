@@ -134,7 +134,7 @@ RequestManager.prototype.updateWaitTime = function (newWaitTime) {
 }
 
 
-//Request a batch of links from the linkArray
+// Request a batch of links from the linkArray
 function iterate(startIndex, endIndex) {
     var i;
 

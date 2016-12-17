@@ -72,10 +72,10 @@ reqm.on('error', (err) => {
 // is complete.
 
 // The new waitTime in milliseconds. Must be greater than or equal to 0
-reqm.updateWaitTime();
+reqm.updateWaitTime(newWaitTime);
 
 // The new batch amount. Must be greater than or equal to 1
-reqm.updateBatchAmount();
+reqm.updateBatchAmount(newBatchAmount);
 
 ```
 

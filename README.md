@@ -22,7 +22,7 @@ var reqm = new RequestManager({
     requestOptions: {       // optional, default none. These are the options that can be specified for the 'request' module
         encoding: null,     // Save raw responses
         headers: {          // Set a custom user agent
-            'User-Agent': ''
+            'User-Agent': 'Mozilla/5.0 (iPad; U; CPU OS 3_2_1 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Mobile/7B405'
         }
     }
 });
@@ -66,33 +66,16 @@ reqm.on('error', (err) => {
 });
 
 
-
 // Special functions
 // These functions can be called while 'request-manager' is running. The
 // values they update will be applied once the current batch of requests 
 // is complete.
 
-// 
+// The new waitTime in milliseconds. Must be greater than or equal to 0
 reqm.updateWaitTime();
 
-
+// The new batch amount. Must be greater than or equal to 1
 reqm.updateBatchAmount();
-
-```
-
-
-How it works:
-```
-Specify an array of links to request: []
-
-Request the batch amount (eg., 3)
-
-Wait for every request to complete
-
-Once the current batch is finished, wait for waitTime amount
-
-
-
 
 ```
 

@@ -134,7 +134,17 @@ RequestManager.prototype.updateWaitTime = function (newWaitTime) {
     if (newWaitTime >= 0) {
         managerState.waitTime = newWaitTime;
     } else {
-        localEvent.emit('error', 'The waitTime must be larger than 0');
+        localEvent.emit('error', 'The waitTime must be larger than or equal to 0');
+    }
+}
+
+
+// Update the batch amount
+RequestManager.prototype.updateBatchAmount = function (newBatchAmount) {
+    if (newBatchAmount >= 1) {
+        managerState.numberConcurrent = newBatchAmount;
+    } else {
+        localEvent.emit('error', 'The batch amount must be larger than 0');
     }
 }
 

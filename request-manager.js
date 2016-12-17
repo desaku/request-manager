@@ -105,6 +105,11 @@ RequestManager.prototype.start = function () {
     // Reset the 'kill' flag
     kill = false;
 
+    // Safely reset progress variables when the 
+    // manager is clearly not running
+    localState.numberStarted = 0;
+    localState.finishedRequests = 0;
+    
     // Check that the variables are ready
     assertReady((ready, err_msg) => {
         if (ready) {

@@ -1,7 +1,7 @@
+[![NPM](https://nodei.co/npm/request-manager.png?downloads=true&stars=true)](https://nodei.co/npm/request-manager/)
+
 # request-manager
 A NodeJS module to manage batch requests with the 'request' module. The timing and batch amount can be set and updated at any point in time.
-
-[![NPM](https://nodei.co/npm/request-manager.png?downloads=true&stars=true)](https://nodei.co/npm/request-manager/)
 
 # Usage
 Install from NPM:

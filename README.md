@@ -1,6 +1,8 @@
 # request-manager
 A NodeJS module to manage batch requests with the 'request' module. The timing and batch amount can be set and updated at any point in time.
 
+[![NPM](https://nodei.co/npm/request-manager.png?downloads=true&stars=true)](https://nodei.co/npm/request-manager/)
+
 # Usage
 Install from NPM:
 
@@ -13,15 +15,14 @@ const RequestManager = require('request-manager');
 
 links = []; // Some full array of links
 
-
 // Initialize a RequestManager instance
 var reqm = new RequestManager({
     linkArray: links,       // required. 
     numberConcurrent: 3,    // optional, default 5. Must be >= 1
     waitTime: 500,          // optional, default 0 milliseconds. Must be >= 0.
     requestOptions: {       // optional, default none. These are the options that can be specified for the 'request' module
-        encoding: null,     // Save raw responses
-        headers: {          // Set a custom user agent
+        encoding: null,     // Example: Save raw responses
+        headers: {          // Example: Set a custom user agent
             'User-Agent': 'Mozilla/5.0 (iPad; U; CPU OS 3_2_1 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Mobile/7B405'
         }
     }
@@ -30,7 +31,6 @@ var reqm = new RequestManager({
 
 // Start requesting the links. This can be cancelled with reqm.stop()
 reqm.start();
-
 
 // Cancels the currently running RequestManager. If reqm.start() is 
 // called again, it starts back from the beginning.
